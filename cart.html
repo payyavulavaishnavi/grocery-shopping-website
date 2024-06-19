@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cart</title>
+</head>
+<body>
+    <h2>Cart</h2>
+    <ul id="cartList">
+        <!-- Cart items will be dynamically added here -->
+    </ul>
+    <p>Total: <span id="totalPrice">Rs.0</span></p>
+
+    <script>
+        function getCartItems() {
+            return JSON.parse(localStorage.getItem('cartItems')) || [];
+        }
+
+        // Function to update the cart UI with items from localStorage
+        function updateCartUI() {
+            var cartList = document.getElementById("cartList");
+            var totalPriceElement = document.getElementById("totalPrice");
+            var cartItems = getCartItems();
+
+            // Clear the existing cart items
+            cartList.innerHTML = '';
+
+            // Update cart UI with items from localStorage
+            cartItems.forEach(function(item) {
+                var li = document.createElement("li");
+                li.textContent = item.name + " - Rs." + item.price;
+                cartList.appendChild(li);
+            });
+
+            // Calculate and display total price
+            var totalPrice = cartItems.reduce(function(total, item) {
+                return total + item.price;
+            }, 0);
+            totalPriceElement.textContent = "Rs." + totalPrice;
+        }
+
+        // Call updateCartUI when the page loads to display existing cart items
+        window.onload = function() {
+            updateCartUI();
+        };
+    </script>
+    <script>
+        function togglePopup() {
+            var popup = document.getElementById("popupContainer");
+            popup.style.display = popup.style.display === "none" ? "block" : "none";
+        }
+
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            sidebar.style.display = sidebar.style.display === "none" ? "block" : "none";
+        }
+
+        function addToCart(itemName, itemPrice) {
+            var cartList = document.getElementById("cartList");
+            var totalPriceElement = document.getElementById("totalPrice");
+
+            // Create a new list item for the cart
+            var li = document.createElement("li");
+            li.textContent = itemName + " - Rs." + itemPrice;
+            cartList.appendChild(li);
+
+            // Update the total price
+            var totalPrice = parseInt(totalPriceElement.textContent.substring(3)); // Remove "Rs." and parse as integer
+            totalPrice += itemPrice;
+            totalPriceElement.textContent = "Rs." + totalPrice;
+        }
+        function getCartItems() {
+        return JSON.parse(localStorage.getItem('cartItems')) || [];
+    }
+
+    // Function to update the cart UI with items from localStorage
+    function updateCartUI() {
+        var cartList = document.getElementById("cartList");
+        var totalPriceElement = document.getElementById("totalPrice");
+        var cartItems = getCartItems();
+
+        // Clear the existing cart items
+        cartList.innerHTML = '';
+
+        // Update cart UI with items from localStorage
+        cartItems.forEach(function(item) {
+            var li = document.createElement("li");
+            li.textContent = item.name + " - Rs." + item.price;
+            cartList.appendChild(li);
+        });
+
+        // Calculate and display total price
+        var totalPrice = cartItems.reduce(function(total, item) {
+            return total + item.price;
+        }, 0);
+        totalPriceElement.textContent = "Rs." + totalPrice;
+    }
+
+    // Function to add item to cart and store in localStorage
+    function addToCart(itemName, itemPrice) {
+        var cartItems = getCartItems();
+        var newItem = { name: itemName, price: itemPrice };
+        cartItems.push(newItem);
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+        // Update cart UI
+        updateCartUI();
+    }
+
+    // Call updateCartUI when the page loads to display existing cart items
+    window.onload = function() {
+        updateCartUI();
+    };
+    </script>
+    <!-- Button to open sidebar -->
+
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+    <a href="javascript:void(0)" class="close-btn" onclick="closeSidebar()">&times;</a>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+</div>
+
+<!-- Page content -->
+<div class="content" id="main">
+    <h2>Main Content</h2>
+    <p>This is the main content area.</p>
+</div>
+
+<script>
+    // Function to open sidebar
+    function openSidebar() {
+        document.getElementById("sidebar").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+    }
+
+    // Function to close sidebar
+    function closeSidebar() {
+        document.getElementById("sidebar").style.width = "0"; // Adjusted width to close sidebar
+        document.getElementById("main").style.marginLeft = "0"; // Adjusted margin to close sidebar
+    }
+</script>
+<script>
+    // Function to toggle sidebar
+    function toggleSidebar() {
+        var sidebar = document.getElementById("sidebar");
+        var main = document.getElementById("main");
+        
+        if (sidebar.style.width === "250px") {
+            // Close sidebar
+            sidebar.style.width = "0";
+            main.style.marginLeft = "0";
+        } else {
+            // Open sidebar
+            sidebar.style.width = "250px";
+            main.style.marginLeft = "250px";
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fruits</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <h2>Grocery shopping</h2>
+        <div class="search">
+            <input type="search" id="search" placeholder="Search here">
+            <button onclick="searchItem()"><img class="search-icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG_-f2tfwHEdxXwJd1jALDJXcDNUgP1UpXmLRn7D6M3A&s" alt="Search" height="45px" width="45px"></button>
+        </div>
+        <ul class="nav nav-pills">
+            <li><button onclick="togglePopup()" class="btn">Sign Up</button></li>
+            <li><a href="#" class="btn"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2YDcpUCoyhGXFePaoU512gcuDt0Fmk3RJ29O6s_Cnyw&s" alt="Profile"></a></li>
+            <li><a href="#" class="btn" onclick="toggleSidebar()">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Shopping_cart_icon.svg/1250px-Shopping_cart_icon.svg.png" alt="Cart">
+            </a>
+            </li>    
+        </ul>
+    </div>
+    <div class="rows">
+        <div class="container">
+            <div class='col-sm-3'>
+                <a href="homepage.html"><button class="btn btn-outline-basic"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Noun_Project_vegetables_icon_1422990_cc.svg/1200px-Noun_Project_vegetables_icon_1422990_cc.svg.png">Vegetables</button></a>
+                <a href="fruits.html"><button class="btn btn-outline-basic"><img src="https://static.thenounproject.com/png/1422989-200.png">Fruits</button></a>
+                <a href="beverage.html"><button class="btn btn-outline-basic"><img src="https://static.thenounproject.com/png/2072470-200.png">Beverages</button></a>
+                <a href="snacks.html"><button class="btn btn-outline-basic"><img src="https://cdn-icons-png.freepik.com/512/2553/2553651.png">Snacks</button></a>
+            </div>
+        </div>
+    </div>
+    <!-- Insert additional container-box elements here -->
+    <div class="rows">
+        <!--<div class="col-md-6"></div>-->
+        <div class="container-box" id="TomatoesBox">
+            <img src="https://fruitboxco.com/cdn/shop/products/asset_40_5dbc9ea0-9f52-4be8-8c49-8e79b086a0b1_grande.jpg?v=1679632170" id="Strawberries" height="200px" width="200px">
+            Strawberries<br>
+            Rs.120
+            <button class="btn-outline-success" onclick="addToCart('Strawberries', 120,this)">Add to Cart</button>
+        </div>
+        <div class="container-box">
+            <img src="https://organiclivestockandcrops.org/wp-content/uploads/2018/06/organic-orange.jpg" id="Oranges" height="200px" width="200px">
+            Oranges<br>
+            Rs.250
+            <button class="btn-outline-success" onclick="addToCart('Oranges', 250,this)">Add to Cart</button>
+        </div>
+        <div class="container-box">
+            <img src="https://eco-fruits.com/wp-content/uploads/2020/03/Artboard-18-570x570.png" id="Lady finger" height="200px" width="200px">
+            Mangoes<br>
+            Rs.200
+            <button class="btn-outline-success" onclick="addToCart('Mangoes', 200,this)">Add to Cart</button>
+        </div>
+        <div class="container-box">
+            <img src="https://www.amazingclubs.ca/images2/fruitgiftclub.jpg" id=" Potatoes" height="200px" width="200px">
+            pomegranate<br>
+            Rs.80
+            <button class="btn-outline-success" onclick="addToCart('pomegranate', 80,this)">Add to Cart</button>
+        </div>
+        <div class="container-box">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKsmRI-Q1tfSu69JjiEf-716FC3sTEyeguvlmxHJJOFB1tCiOWa9dabGAxq2X_f4XuIbU&usqp=CAU" id="Carrot" height="200px" width="200px">
+            Kiwi<br>
+            Rs.60
+            <button class="btn-outline-success" onclick="addToCart('Kiwi', 60,this)">Add to Cart</button>
+        </div>
+        <div class="container-box">
+            <img src="https://www.asiangroceronline.com.au/img/products/2192_banana-each~banana-ea.webp?6IMT4" id="Capsicum" height="200px" width="200px">
+            Bananas<br>
+            Rs.40
+            <button class="btn-outline-success" onclick="addToCart('Bananas', 40,this)">Add to Cart</button>
+        </div>
+        <div class="container-box">
+            <img src="https://5.imimg.com/data5/SELLER/Default/2022/4/JZ/QF/IG/143695254/02-500x500.jpg" id="Broccoli" height="200px" width="200px">
+            Watermelon<br>
+            Rs.50
+            <button class="btn-outline-success" onclick="addToCart('Watermelon', 50,this)">Add to Cart</button>
+        </div>
+        <div class="container-box">
+            <img src="https://5.imimg.com/data5/AK/RA/MY-68428614/apple.jpg" id="Beetroot" height="200px" width="200px">
+            Apples<br>
+            Rs.100
+            <button class="btn-outline-success" onclick="addToCart('Apples', 100,this)">Add to Cart</button>
+        </div>
+        
+        <!-- Add more container-box elements here -->
+    </div>
+    <div class="sidebar" id="sidebar">
+        <h2>Cart</h2>
+        <ul id="cartList">
+            <!-- Cart items will be dynamically added here -->
+        </ul>
+        <p>Total: <span id="totalPrice">Rs.0</span></p>
+    </div>
+    <!-- Popup container -->
+    <div class="popup-container" id="popupContainer">
+        <!-- Popup box -->
+        <div class="popup-box">
+            <!-- Close button -->
+            <span class="close-btn" onclick="togglePopup()">X</span>
+            <!-- Popup content -->
+            <h2>Sign Up</h2>
+            <div class="container-form">
+                <form onsubmit="return validateForm()">
+                    <input type="text" id="name" placeholder="Enter name" class="search"><br>
+                    <span id="nameError" class="error"></span><br>
+
+                    <input type="email" id="email" placeholder="Email" class="search"><br>
+                    <span id="emailError" class="error"></span><br>
+
+                    <input type="password" id="password" placeholder="Password" class="search"><br>
+                    <span id="passwordError" class="error"></span><br>
+
+                    <button type="submit" class="btn">Sign Up</button><br>
+                    <p>OR</p>
+                    <button class="btn" ><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYo-qmaw73YgPFxlF43UfAqpW3-uK7TU9MCQ&usqp=CAU" height="40" width="40"></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Function to validate the form
+        function validateForm() {
+          var name = document.getElementById("name").value;
+          var password = document.getElementById("password").value;
+          var email = document.getElementById("email").value;
+          
+          // Name validation
+          if (!/^[a-zA-Z]+$/.test(name) || name.length < 6) {
+            document.getElementById("nameError").innerText = "Name should contain alphabets and length should be at least 6 characters.";
+            return false;
+          } else {
+            document.getElementById("nameError").innerText = "";
+          }
+    
+          // Password validation
+          if (password.length < 6) {
+            document.getElementById("passwordError").innerText = "Password should be at least 6 characters long.";
+            return false;
+          } else {
+            document.getElementById("passwordError").innerText = "";
+          }
+    
+          // Email validation
+          var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailPattern.test(email)) {
+            document.getElementById("emailError").innerText = "Invalid email format.";
+            return false;
+          } else {
+            document.getElementById("emailError").innerText = "";
+          }
+    
+          // Other validations can be added here if needed
+    
+          // If all validations pass, return true to submit the form
+          return true;
+        }
+      </script>
+    <!-- JavaScript to toggle sidebar -->
+    <script>
+        // Function to toggle sidebar
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            var main = document.getElementById("main");
+
+            if (sidebar.style.width === "250px") {
+                // Close sidebar
+                sidebar.style.width = "0";
+                main.style.marginLeft = "0";
+            } else {
+                // Open sidebar
+                sidebar.style.width = "250px";
+                main.style.marginLeft = "250px";
+            }
+        }
+    </script>
+
+    <!-- JavaScript for searching items -->
+    <script>
+        function searchItem() {
+            var searchInput = document.getElementById("search").value.toLowerCase();
+            // You can customize the URL format based on your page structure
+            var url = "";
+
+            // Add conditions to match the search input with specific items
+            if (searchInput === "fruits" || searchInput === "orange" || searchInput === "strawberries" || searchInput === "mangoes" || searchInput === "pomegranate" || searchInput === "kiwi" || searchInput === "bananas" || searchInput === "watermelon" || searchInput === "apples") {
+                url = "fruits.html";
+            } else if (searchInput === "beverage" || searchInput === "coco cola" || searchInput === "sprite" || searchInput === "thumbs Up" || searchInput === "apple juice" || searchInput === "fanta" || searchInput === "iced Latte" || searchInput === "lemon ice tea" || searchInput === "mountain dew") {
+                url = "beverage.html";
+            } else if (searchInput === "snacks" || searchInput === "little hearts" || searchInput === "potato chips" || searchInput === "kurkure green chutney" || searchInput === "puff corn" || searchInput === "kurkure" || searchInput === "doritos" || searchInput === "maggi" || searchInput === "mad angles" || searchInput === "khatta meetha") {
+                url = "snacks.html";
+            } else if (searchInput === "vegetables" || searchInput === "tomatoes" || searchInput === "onions" || searchInput === "lady finger" || searchInput === "potatoes" || searchInput === "carrot" || searchInput === "capsicum" || searchInput === "broccoli" || searchInput === "beetroot") {
+                url = "homepage.html";
+            }
+            if (url !== "") {
+                window.location.href = url;
+            } else {
+                alert("Item not found!");
+            }
+        }
+        
+        // Function to add item to cart and store in localStorage
+        function addToCart(itemName, itemPrice) {
+            var cartItems = getCartItems();
+            var newItem = { name: itemName, price: itemPrice };
+            cartItems.push(newItem);
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+            // Update cart UI
+            updateCartUI();
+        }
+        
+        function getCartItems() {
+            return JSON.parse(localStorage.getItem('cartItems')) || [];
+        }
+
+        // Function to update the cart UI with items from localStorage
+        function updateCartUI() {
+            var cartList = document.getElementById("cartList");
+            var totalPriceElement = document.getElementById("totalPrice");
+            var cartItems = getCartItems();
+
+            // Clear the existing cart items
+            cartList.innerHTML = '';
+
+            // Update cart UI with items from localStorage
+            cartItems.forEach(function(item) {
+                var li = document.createElement("li");
+                li.textContent = item.name + " - Rs." + item.price;
+                cartList.appendChild(li);
+            });
+
+            // Calculate and display total price
+            var totalPrice = cartItems.reduce(function(total, item) {
+                return total + item.price;
+            }, 0);
+            totalPriceElement.textContent = "Rs." + totalPrice;
+        }
+        
+        // Function to toggle popup
+        function togglePopup() {
+            var popup = document.getElementById("popupContainer");
+            popup.style.display = popup.style.display === "none" ? "block" : "none";
+        }
+    </script>
+    <script>
+        // Existing JavaScript functions...
+    
+        function addToCart(itemName, itemPrice, button) {
+            var cartList = document.getElementById("cartList");
+            var totalPriceElement = document.getElementById("totalPrice");
+    
+            // Check if the item already exists in the cart
+            var existingItem = cartList.querySelector(`li[data-item="${itemName}"]`);
+            if (existingItem) {
+                // If item exists, increase its quantity
+                var quantityElement = existingItem.querySelector(".quantity");
+                var quantity = parseInt(quantityElement.textContent) + 1;
+                quantityElement.textContent = quantity;
+    
+                // Update the total price
+                var totalPrice = parseInt(totalPriceElement.textContent.substring(3)); // Remove "Rs." and parse as integer
+                totalPrice += itemPrice;
+                totalPriceElement.textContent = "Rs." + totalPrice;
+            } else {
+                // If item doesn't exist, add it to the cart
+                var li = document.createElement("li");
+                li.setAttribute("data-item", itemName);
+                li.innerHTML = `
+                    ${itemName} - Rs.${itemPrice}
+                    <button class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                    <span class="quantity">1</span>
+                    <button class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+                `;
+                cartList.appendChild(li);
+    
+                // Update the total price
+                var totalPrice = parseInt(totalPriceElement.textContent.substring(3)); // Remove "Rs." and parse as integer
+                totalPrice += itemPrice;
+                totalPriceElement.textContent = "Rs." + totalPrice;
+    
+                // Change the button text to "Added to Cart"
+                button.textContent = "Added to Cart";
+            }
+        }
+    </script>
+</body>
+</html>
+   

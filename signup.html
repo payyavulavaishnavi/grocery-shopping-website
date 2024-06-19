@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        /* Popup container */
+        .popup {
+            display: none; /* Hide the popup by default */
+            position: fixed; /* Position the popup relative to the viewport */
+            top: 50%; /* Center the popup vertically */
+            left: 50%; /* Center the popup horizontally */
+            transform: translate(-50%, -50%); /* Center the popup both vertically and horizontally */
+            background-color: white;
+            width: 250px;
+            padding: 20px;
+            border: 0.5px solid grey;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+            z-index: 1; /* Ensure the popup appears above other elements */
+        }
+
+        /* Close button */
+        .close {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        /* Style form elements */
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        button {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Anchor tag to open the popup -->
+<a href="#" onclick="openPopup()">Sign In</a>
+
+<!-- Popup container -->
+<div id="signupPopup" class="popup">
+    <!-- Close button -->
+    <span class="close" onclick="closePopup()">&times;</span>
+    
+    <!-- Signup form -->
+    <form>
+        <input type="text" id="name" placeholder="Enter name"><br>
+        <input type="email" id="email" placeholder="Email"><br>
+        <input type="password" id="password" placeholder="Password"><br>
+        <button type="submit">Sign Up</button><br>
+        <p>OR</p>
+        <button class="googlelink"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYo-qmaw73YgPFxlF43UfAqpW3-uK7TU9MCQ&usqp=CAU"></button>
+    </form>
+</div>
+
+<script>
+    // Function to open the popup
+    function openPopup() {
+        document.getElementById("signupPopup").style.display = "block";
+    }
+
+    // Function to close the popup
+    function closePopup() {
+        document.getElementById("signupPopup").style.display = "none";
+    }
+</script>
+
+</body>
+</html>
+
